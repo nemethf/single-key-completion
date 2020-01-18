@@ -35,6 +35,7 @@
 ;; there is only a handful of completion candidates.  When there are
 ;; lots of candidates, tmm runs out of shortcuts and
 ;; `single-key-completing-read' calls `single-key-fallback-function'.
+;; C-b forces the fallback.
 ;;
 ;; (Instead of falling back, we could mitigate the situation, for
 ;; example, by copying how ace-jump-mode works.  However, this isn't a
