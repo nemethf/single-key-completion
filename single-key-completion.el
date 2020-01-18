@@ -83,6 +83,10 @@
   "Add extra item to the keymap of minibuffer."
   (define-key (current-local-map) "\C-b" #'single-key-fallback))
 
+(defvar tmm-short-cuts)
+(defvar tmm-table-undef)
+(defvar tmm-km-list)
+
 ;; This function is a rework of `tmm-prompt'.
 ;;;###autoload
 (defun single-key-completing-read
