@@ -1,5 +1,6 @@
 ;; single-key-competition.el --- completion with a single keystroke -*- lexical-binding: t -*-
 
+;; Copyright (C) 1994-1996, 2000-2018 Free Software Foundation, Inc.
 ;; Copyright (C) 2020 Felicián Németh
 
 ;; Version: 0.1
@@ -20,12 +21,6 @@
 ;;
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-;; This file incorporates work (a portion of `tmm-prompt') covered by
-;; the following copyright and the same license:
-;;
-;; Copyright (C) 1994-1996, 2000-2018 Free Software Foundation, Inc.
-
 
 ;;; Commentary:
 
