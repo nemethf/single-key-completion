@@ -86,10 +86,11 @@
 ;;;###autoload
 (defun single-key-completing-read
     (gl-str collection &optional predicate require-match
-            initial-input hist default-item inherit-input-method)
-  ;; checkdoc-params: (gl-str collection predicate require-match initial-input hist default-item inherit-input-method)
+            initial-input hist def inherit-input-method)
+  ;; checkdoc-params: (gl-str collection predicate require-match initial-input hist def inherit-input-method)
   "A `completing-read-function' relying on ‘tmm-menubar’."
   (let* ((items (all-completions (or initial-input "") collection predicate))
+         (default-item (if (listp def) (car def) def))
          (index-of-default
           (or (seq-position (reverse items) default-item #'equal) 0))
          ;; tmm-km-list is an alist of (STRING . MEANING).
@@ -100,7 +101,7 @@
             (cons nil (cons (funcall single-key-fallback-function
                                      gl-str collection predicate
                                      require-match initial-input hist
-                                     default-item inherit-input-method)
+                                     def inherit-input-method)
                             nil))))
          single-key-exit out history-len tmm-table-undef tmm-c-prompt
          tmm-old-mb-map tmm-short-cuts
@@ -164,6 +165,8 @@
 ;; (single-key-completing-read "With default: " '("foo" "foo-baz" "foo-car" "foo-dry" "foo-eel") nil nil nil nil "foo-car")
 ;;
 ;; (single-key-completing-read "Fallback: " '("a" "aa" "aaa" "aaaa" "aaaaa" "aaaaaa" "aaaaaaa" "aaaaaaaa" "aaaaaaaaa" "aaaaaaaaaa" "aaaaaaaaaaa" "aaaaaaaaaaaa" "aaaaaaaaaaaaa" "aaaaaaaaaaaaaa" "aaaaaaaaaaaaaaa" "aaaaaaaaaaaaaaaa") nil nil "aa")
+;;
+;; (single-key-completing-read "With default: " '("foo" "foo-baz" "foo-car" "foo-dry" "foo-eel") nil nil nil nil '("foo-baz" "foo"))
 
 (provide 'single-key)
 ;;; single-key-completion.el ends here
