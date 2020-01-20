@@ -1,7 +1,7 @@
 # Emacs completion with a single keystroke
 
-Single-key file provides `single-key-completing-read`, which can be
-used as a `completing-read-function`.  With the help of tmm.el, it
+single-key-completion provides `single-key-completing-read`, which can
+be used as a `completing-read-function`.  With the help of tmm.el, it
 assigns a single-key shortcut to each completion candidate when there
 is only a handful of completion candidates.  When there are lots of
 candidates, tmm runs out of shortcuts and `single-key-completing-read`

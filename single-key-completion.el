@@ -1,4 +1,4 @@
-;; single-key-competition.el --- completion with a single keystroke -*- lexical-binding: t -*-
+;; single-key-completion.el --- completion with a single keystroke -*- lexical-binding: t -*-
 
 ;; Copyright (C) 1994-1996, 2000-2018 Free Software Foundation, Inc.
 ;; Copyright (C) 2020 Felicián Németh
@@ -24,11 +24,11 @@
 
 ;;; Commentary:
 
-;; Single-key file provides `single-key-completing-read', which can be
-;; used as a `completing-read-function'.  With the help of tmm.el, it
-;; assigns a single-key shortcut to each completion candidate when
-;; there is only a handful of completion candidates.  When there are
-;; lots of candidates, tmm runs out of shortcuts and
+;; single-key-completion provides `single-key-completing-read', which
+;; can be used as a `completing-read-function'.  With the help of
+;; tmm.el, it assigns a single-key shortcut to each completion
+;; candidate when there is only a handful of completion candidates.
+;; When there are lots of candidates, tmm runs out of shortcuts and
 ;; `single-key-completing-read' calls `single-key-fallback-function'.
 ;; C-b forces the fallback.
 ;;
